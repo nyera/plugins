@@ -1,0 +1,56 @@
+/**
+ * WooCommerce checkout blockUI — circular spinner (all themes).
+ */
+.woocommerce-checkout-payment .blockUI.blockOverlay,
+.woocommerce form.checkout .blockUI.blockOverlay,
+.woocommerce .blockUI.blockOverlay,
+body.woocommerce-checkout .blockUI.blockOverlay {
+	background: rgba(15, 23, 42, 0.5) !important;
+	opacity: 1 !important;
+	backdrop-filter: blur(3px) !important;
+	-webkit-backdrop-filter: blur(3px) !important;
+	border-radius: 0.75rem !important;
+	cursor: wait !important;
+}
+
+.woocommerce form.checkout .blockUI.blockMsg,
+.woocommerce .blockUI.blockMsg,
+body.woocommerce-checkout .blockUI.blockMsg {
+	display: none !important;
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+.woocommerce form.checkout .blockUI.blockOverlay::before,
+.woocommerce .blockUI.blockOverlay::before,
+body.woocommerce-checkout .blockUI.blockOverlay::before {
+	display: none !important;
+	content: none !important;
+	background: none !important;
+}
+
+.woocommerce form.checkout .blockUI.blockOverlay::after,
+.woocommerce .blockUI.blockOverlay::after,
+body.woocommerce-checkout .blockUI.blockOverlay::after {
+	content: "" !important;
+	position: absolute !important;
+	inset: 0 !important;
+	margin: auto !important;
+	width: 3rem !important;
+	height: 3rem !important;
+	border-radius: 50% !important;
+	border: 3px solid rgba(255, 255, 255, 0.2) !important;
+	border-top-color: #fff !important;
+	border-right-color: #fff !important;
+	animation: yamamah-checkout-spin 0.75s linear infinite !important;
+	display: block !important;
+	background: none !important;
+	box-shadow: none !important;
+}
+
+@keyframes yamamah-checkout-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
